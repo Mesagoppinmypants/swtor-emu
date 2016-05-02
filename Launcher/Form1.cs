@@ -39,15 +39,23 @@ namespace Swtor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string lang = extractLang();
-            ProcessStartInfo info = new ProcessStartInfo(Directory.GetCurrentDirectory() + "\\swtor\\client\\swtor.exe", "-set username " + username.Text +
-                " -set password d9G2zHvR48gt1ODJfdGymH/UtJoqhOjMLtWzzXqE6Mx80unJedTpzi3T5s0q1eKaK4TnnXfXsZ59gbHMLNbnyXzR4Ml6hrXDetXgmHqEtckqgLHCLoDjnnfVtMl3geLMdoPhwnnR5Jh40uHIeNHkynzb5ph8gLLJLtHmz3jX6cJ71uLLe4Hnmi7atMgqhLbPeNGymiyA48521OPNLtuxzn+H5ch81eHJfYHizXjQ6cN72+meLYGxzHbX5Mx5gejCK4GymCvU5MJ62+POKofmzXnb48ks1OTNLdOzwnuG4p5+2+POf4ayw3yA5Jh407LMKdbowiqG5p5+07XLd4exyWLRtMgr1uHIfYfozHbR4pks2rWfd4Pgz3yHsZ12hrSZeQ==" +
-                " -set platform swtor.server.com:8080 -set environment swtor " +
-                "-set lang " + lang + " -set torsets main," + lang + " @swtor_dual.icb");
+            try
+            {
+                string lang = extractLang();
+                ProcessStartInfo info = new ProcessStartInfo(Directory.GetCurrentDirectory() + "\\swtor\\client\\swtor.exe", "-set username " + username.Text +
+                    " -set password d9G2zHvR48gt1ODJfdGymH/UtJoqhOjMLtWzzXqE6Mx80unJedTpzi3T5s0q1eKaK4TnnXfXsZ59gbHMLNbnyXzR4Ml6hrXDetXgmHqEtckqgLHCLoDjnnfVtMl3geLMdoPhwnnR5Jh40uHIeNHkynzb5ph8gLLJLtHmz3jX6cJ71uLLe4Hnmi7atMgqhLbPeNGymiyA48521OPNLtuxzn+H5ch81eHJfYHizXjQ6cN72+meLYGxzHbX5Mx5gejCK4GymCvU5MJ62+POKofmzXnb48ks1OTNLdOzwnuG4p5+2+POf4ayw3yA5Jh407LMKdbowiqG5p5+07XLd4exyWLRtMgr1uHIfYfozHbR4pks2rWfd4Pgz3yHsZ12hrSZeQ==" +
+                    " -set platform swtor.server.com:8080 -set environment swtor " +
+                    "-set lang " + lang + " -set torsets main," + lang + " @swtor_dual.icb");
 
-            info.WorkingDirectory = Directory.GetCurrentDirectory() + "\\swtor\\client";
+                info.WorkingDirectory = Directory.GetCurrentDirectory() + "\\swtor\\client";
 
-            Process.Start(info);
+                Process.Start(info);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:\n\n" + ex.Message, "Prevented Crash");
+            }
+            
         }
     }
 }

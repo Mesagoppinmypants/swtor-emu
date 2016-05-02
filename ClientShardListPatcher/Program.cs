@@ -23,7 +23,7 @@ namespace ClientShardListPatcher
     class Program
     {
         [System.Runtime.InteropServices.DllImport("Kernel32")]
-        private extern static Boolean CloseHandle(IntPtr handle);
+        private extern static bool CloseHandle(IntPtr handle);
         /// <summary>
         /// This file patches swtor.exe (and backs it up to swtor.DateTime.Now.bak) for use with personal SSL servers.
         /// </summary>
@@ -70,6 +70,7 @@ namespace ClientShardListPatcher
                 {
                     Console.WriteLine("Cannot open swtor.exe. Check program is not running and you have adequate permissions.");
                 }
+
                 if (writePosition > 0)
                 {
                     FileStream stream = new FileStream("swtor.exe", FileMode.OpenOrCreate, FileAccess.ReadWrite);
