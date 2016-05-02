@@ -16,9 +16,6 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 
 namespace ClientShardListPatcher
@@ -66,7 +63,7 @@ namespace ClientShardListPatcher
                         }
                         position++;
                     }
-                    CloseHandle(swtorExeStream.Handle);
+                    CloseHandle(swtorExeStream.SafeFileHandle.DangerousGetHandle());
                     swtorExeStream.Close();
                 }
                 catch (Exception)
