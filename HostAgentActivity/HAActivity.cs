@@ -15,19 +15,15 @@
 * with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Activities;
-using Microsoft.TeamFoundation.Build.Client;
 using System.ServiceModel;
 using WCFContracts;
 
 namespace HostAgentActivity
 {
-    [BuildActivity(HostEnvironmentOption.All)]
-    [BuildExtension(HostEnvironmentOption.All)]
+    //[BuildActivity(HostEnvironmentOption.All)]
+    //[BuildExtension(HostEnvironmentOption.All)]
     public sealed class HasProcessActivity : CodeActivity<bool>
     {
         // Define an activity input argument of type string

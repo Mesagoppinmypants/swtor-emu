@@ -39,7 +39,7 @@ namespace ShardServer.Packets.Client
 
     public class CMsg_CharacterCreateRequest : IClientPacket
     {
-        static byte[] lastpacket;
+        //static byte[] lastpacket;
         void IClientPacket.ExecutePacket(AsyncConnection connection, ByteBuffer packet)
         {
             uint id = packet.ReadObjectIDRev();

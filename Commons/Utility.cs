@@ -237,7 +237,7 @@ namespace Commons
                     string byteshere = hexString.Substring(i, 2);
                     result.Add(byte.Parse(byteshere, NumberStyles.HexNumber));
                 }
-                catch (ArgumentOutOfRangeException ex)
+                catch (ArgumentOutOfRangeException)
                 {
                     result.Add(0x07);
                 }
